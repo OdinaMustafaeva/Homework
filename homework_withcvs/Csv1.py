@@ -10,15 +10,14 @@ big_q = input("""
      #4 = see all data
      >:""")
 if big_q == '1':
-    new_district = input("enter n ew district name")
+    new_district = input("enter new district name")
     new_district1 = open(new_district, "a+")
-    with open("distructsname.txt", "r+") as distructs:
-        distructs.write(f"{new_district} ,")
+    with open("distructsname.csv", "r+") as distructs:
+        distructs.write(new_district)
         print('Good')
-        csv.DictWriter(new_district, fieldnames, delimiter=',')
 elif big_q == '2':
     add_distructs = []
-    with open("distructsname.txt", "r+") as distructs:
+    with open("distructsname.csv", "r+") as distructs:
         a = distructs.read()
         add_distructs.append(a)
         ch_dis = input(f"{add_distructs} which distruct  :")
@@ -27,14 +26,24 @@ elif big_q == '2':
         except Exception:
             print('This data not found')
         else:
-            location: input("enter location")
-            name: input("enter name")
-            age: input("enter age")
-            csv.writer(a)
+            all_d = csv.DictWriter(ch_dis1, fieldnames, delimiter=',')
+            inp = int(input('how much data do you to add?'))
+            for s in range(inp):
+                print(f'data {s}')
+                all_list = {
+                    'location': input(f'data enter location'),
+                    'name': input('enter name'),
+                    'age': input('enter age')
+                }
+                all_d.writerow(all_list)
+
+
+
+
 
 elif big_q == '3':
     add_distructs = []
-    with open("distructsname.txt", "r+") as distructs:
+    with open("distructsname.csv", "r+") as distructs:
         a = distructs.read()
         add_distructs.append(a)
         ch_dis = input(f"{add_distructs} which distruct  :")
@@ -43,13 +52,14 @@ elif big_q == '3':
         except Exception:
             print('This data not found')
         else:
-            redoo = csv.DictReader(ch_dis1)
+            redoo = csv.reader(ch_dis1)
             print('name and location')
             for i in redoo:
-            print(f"{i['name']} = {i['location']}")
+                print(f"{i}")
+
 elif big_q == '4':
     add_distructs = []
-    with open("distructsname.txt", "r+") as distructs:
+    with open("distructsname.csv", "r+") as distructs:
         a = distructs.read()
         add_distructs.append(a)
         ch_dis = input(f"{add_distructs} which distruct  :")
@@ -60,4 +70,4 @@ elif big_q == '4':
         else:
             redoo = csv.DictReader(ch_dis1)
             for i in redoo:
-            print(i)
+                print(i)
