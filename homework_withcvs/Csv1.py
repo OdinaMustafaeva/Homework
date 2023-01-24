@@ -43,12 +43,13 @@ for i in range(3):
     elif big_q == '2':
         with open('distructsname.txt', 'r') as distructs:
             a = distructs.read()
-            ch_dis = input(f"{a} which distruct  :")
+            ch_dis = input(f"{a} \nWHICH DISTRUCT<:")
             try:
-                ch_dis1 = open(ch_dis, "a")
+                ch_dis1 = open(ch_dis, "r")
             except FileNotFoundError:
                 print('This file not found')
             else:
+                ch_dis2 = open(ch_dis, "a")
                 location = input("enter location")
                 name = input("enter name")
                 age = input("enter age")
@@ -60,7 +61,7 @@ for i in range(3):
     elif big_q == '3':
         with open("distructsname.txt", "r+") as distructs:
             a = distructs.read()
-            ch_dis = input(f"{a} which distruct  :")
+            ch_dis = input(f"{a} \nWHICH DISTRUCT<:")
             try:
                 ch_dis1 = open(ch_dis, "r+")
             except FileNotFoundError:
@@ -73,7 +74,7 @@ for i in range(3):
     elif big_q == '4':
         with open('distructsname.txt', 'r+') as distructs:
             a = distructs.read()
-            ch_dis = input(f"{a} which distruct  :")
+            ch_dis = input(f"{a} \nWHICH DISTRUCT<::")
             try:
                 ch_dis1 = open(ch_dis, "r+")
             except FileNotFoundError:
