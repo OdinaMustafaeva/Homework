@@ -1,7 +1,6 @@
 # bu bir shahar yoki mamlakatdagi mahallalar va mahalladagi odamlarni ro‘yxatga olish vazifasini bajaradi
 # work wth csv
 
-
 import csv
 
 fieldnames = ['location', 'name', 'age', 'phone_number', 'work']
