@@ -3,8 +3,7 @@ def only_even_numbers(func):
     def even(a, b):
         if (a + b) % 2 != 0:
             return 'please enter only even numbers'
-        else:
-            func(a, b)
+        return func(a, b)
 
     return even
 
@@ -21,10 +20,10 @@ print(pluser(10, 5))
 # homework 5
 def sum_list(func):
     def listr(ls):
-        try:
-            type(ls) == list
-        except Exception:
+        if type(ls) != list:
             print("Please enter list!")
+        else:
+            return func(ls)
 
     return listr
 
