@@ -6,7 +6,7 @@ import csv
 fieldnames = ['location', 'name', 'age', 'phone_number', 'work']
 
 
-def add_new_data(name_file, f, num):
+def add_new_data(name_file, f, num): 
     global fieldnames
     if num == 1:
         with open(name_file, "w") as my_new:
